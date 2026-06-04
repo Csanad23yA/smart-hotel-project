@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartHotel | Szobáink</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&family=Playfair+Display:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="szobak.css?v=stable_premium">
+</head>
+<body>
+
+    <nav class="nav-bar">
+        <a href="index.html" class="logo">SMART<span>HOTEL</span></a>
+        <a href="index.html" class="back-link">← Vissza a főoldalra</a>
+    </nav>
+
+    <div class="container">
+        <header class="page-header">
+            <h1 class="page-title">Exkluzív <span>Szobáink</span></h1>
+            <p class="page-subtitle">Válassza ki az Önnek tökéletes okos menedéket</p>
+        </header>
+
+        <div class="filter-container">
+            <button class="filter-btn active" data-filter="all">Összes szoba</button>
+            <button class="filter-btn" data-filter="standard">Standard</button>
+            <button class="filter-btn" data-filter="suite">Lakosztály</button>
+            <button class="filter-btn" data-filter="luxury">Premium Luxury</button>
+        </div>
+
+        <div class="room-grid">
+
+            <div class="room-card" data-type="standard">
+                <div class="room-img-wrapper open-gallery-btn" data-room="standard">
+                    <div class="room-img" style="background-image: url('https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=600&auto=format&fit=crop');"></div>
+                    <div class="gallery-overlay"><span>Nézd meg a képeket 📸</span></div>
+                    <div class="room-price-tag">59.000 Ft / éj</div>
+                    <div class="room-meta-bar">
+                        <div class="meta-item">📐 28 m²</div>
+                        <div class="meta-item">👤 max. 2 fő</div>
+                        <div class="meta-item">🛏️ King Size</div>
+                    </div>
+                </div>
+                <div class="room-details">
+                    <h3 class="room-name">Smart Standard szoba</h3>
+                    <p class="room-desc">Letisztult, minimalista dizájn és teljes körű okosotthon vezérlés. Ideális választás üzleti utazóknak vagy párban érkezőknek, akik a funkcionális luxust keresik.</p>
+                    <div class="iot-accordion">
+                        <div class="accordion-header">Okosotthon Extrák <span>+</span></div>
+                        <div class="accordion-content">
+                            <ul>
+                                <li>📱 Hangvezérelt világítás és klíma</li>
+                                <li>🔒 Digitális kulcs (okostelefonos belépés)</li>
+                                <li>📺 55" 4K Smart TV beépített streaminggel</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="book-btn" onclick="window.location.href='foglalas.html'">Foglalási szándék</button>
+                </div>
+            </div>
+
+            <div class="room-card" data-type="suite">
+                <div class="room-img-wrapper open-gallery-btn" data-room="suite">
+                    <div class="room-img" style="background-image: url('https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=600&auto=format&fit=crop');"></div>
+                    <div class="gallery-overlay"><span>Nézd meg a képeket 📸</span></div>
+                    <div class="room-price-tag">89.000 Ft / éj</div>
+                    <div class="room-meta-bar">
+                        <div class="meta-item">📐 54 m²</div>
+                        <div class="meta-item">👤 max. 3 fő</div>
+                        <div class="meta-item">🛏️ Super King</div>
+                    </div>
+                </div>
+                <div class="room-details">
+                    <h3 class="room-name">Deluxe Lakosztály</h3>
+                    <p class="room-desc">Tágas terek, különálló nappali szekció és prémium anyaghasználat. Tapasztalja meg a pihenést egy olyan environments-ben, ahol a technológia észrevétlenül szolgálja.</p>
+                    <div class="iot-accordion">
+                        <div class="accordion-header">Okosotthon Extrák <span>+</span></div>
+                        <div class="accordion-content">
+                            <ul>
+                                <li>🌅 Automatizált, fényérzékeny sötétítő függönyök</li>
+                                <li>🎵 Beépített Sonos® surround hangrendszer</li>
+                                <li>☕ Okos kávégép profilmentéssel</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="book-btn" onclick="window.location.href='foglalas.html'">Foglalási szándék</button>
+                </div>
+            </div>
+
+            <div class="room-card" data-type="luxury">
+                <div class="room-img-wrapper open-gallery-btn" data-room="luxury">
+                    <div class="room-img" style="background-image: url('https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&w=600&auto=format&fit=crop');"></div>
+                    <div class="gallery-overlay"><span>Nézd meg a képeket 📸</span></div>
+                    <div class="room-price-tag">149.000 Ft / éj</div>
+                    <div class="room-meta-bar">
+                        <div class="meta-item">📐 110 m²</div>
+                        <div class="meta-item">👤 max. 4 fő</div>
+                        <div class="meta-item">🛏️ 2x Super King</div>
+                    </div>
+                </div>
+                <div class="room-details">
+                    <h3 class="room-name">Luxury Suitee</h3>
+                    <p class="room-desc">A szálloda legfelső emeletén elterülő, egyedi panorámás luxusrezidencia privát tetőterasszal és jakuzzival. A legmagasabb szintű kényelem és privátszféra.</p>
+                    <div class="iot-accordion">
+                        <div class="accordion-header">Okosotthon Extrák <span>+</span></div>
+                        <div class="accordion-content">
+                            <ul>
+                                <li>🛁 Intelligens, hangvezérelt jakuzzi és szauna vezérlés</li>
+                                <li>🌌 Biometrikus privát lift és biztonsági rendszer</li>
+                                <li>🍷 iPad Pro központi szobavezérlő panel</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="book-btn" onclick="window.location.href='foglalas.html'">Foglalási szándék</button>
+                </div>
+            </div>
+
+        </div> 
+
+        <section class="luxury-services-section">
+            <div class="services-header">
+                <h2 class="services-title">Minden szobához <span>jár</span></h2>
+                <p class="services-subtitle">Alapfelszereltség a kompromisszummentes kényelemért</p>
+                <div class="gold-divider-line"></div>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="s-icon">🥂</div>
+                    <h4 class="s-title">Fine Dining Reggeli</h4>
+                    <p class="s-desc">Champagne svédasztalos reggeli prémium helyi és nemzetközi alapanyagokból, minden reggel.</p>
+                </div>
+                <div class="service-card">
+                    <div class="s-icon">🧖‍♂️</div>
+                    <h4 class="s-title">Thermal Spa & Elixír</h4>
+                    <p class="s-desc">Korlátlan, 24 órás belépés a tetőtéri infinity medencéhez, szaunavilághoz és a fitneszteremhez.</p>
+                </div>
+                <div class="service-card">
+                    <div class="s-icon">🛎️</div>
+                    <h4 class="s-title">24/7 VIP Concierge</h4>
+                    <p class="s-desc">Személyre szabott szobaszerviz, digitális asszisztencia és érintésmentes gyors bejelentkezés.</p>
+                </div>
+                <div class="service-card">
+                    <div class="s-icon">🚗</div>
+                    <h4 class="s-title">Zárt VIP Parkoló</h4>
+                    <p class="s-desc">Kamerával megfigyelt, privát földalatti parkolóhely elektromos töltőállomással a tartózkodás idejére.</p>
+                </div>
+            </div>
+        </section>
+
+    </div> 
+
+    <div id="gallery-modal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="gallery-slider">
+                <button class="slider-btn prev-btn">&#10094;</button>
+                <img id="gallery-image" src="" alt="Szoba képe">
+                <button class="slider-btn next-btn">&#10095;</button>
+            </div>
+            <div class="gallery-info">
+                <h3 id="gallery-title">Szoba neve</h3>
+                <p id="gallery-desc">Szoba leírása...</p>
+                <div class="gallery-counter"><span id="current-img-num">1</span> / <span id="total-img-num">3</span></div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <h2 class="footer-logo">DESIGNER<span>FCS</span></h2>
+        <p class="footer-copy">© 2026 SmartHotel Projekt</p>
+        <div class="footer-line"></div>
+    </footer>
+
+    <script src="szobak.js"></script>
+</body>
+</html>

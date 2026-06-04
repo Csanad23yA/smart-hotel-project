@@ -1,0 +1,113 @@
+/* PRÉMIUM SÖTÉT DIZÁJN ÉS FONT ALAPOK */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    background: #09090b; color: #ffffff; font-family: 'Montserrat', sans-serif;
+    min-height: 100vh; display: flex; flex-direction: column; justify-content: space-between; overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* NAVIGÁCIÓ - FŐOLDALLAL MEGEGYEZŐ VASTAG SÚLY ÉS MÉRET */
+.nav-bar { width: 100%; max-width: 1300px; display: flex; justify-content: space-between; align-items: center; padding: 35px 20px; margin: 0 auto; }
+.nav-bar .logo { font-family: 'Playfair Display', serif; color: #fff; text-decoration: none; font-size: 1.8rem; font-weight: 700; letter-spacing: 2px; }
+.nav-bar .logo span { color: #c5a059; }
+.back-link { font-family: 'Montserrat', sans-serif; color: #ffffff; text-decoration: none; font-size: 0.7rem; font-weight: 400; opacity: 0.5; text-transform: uppercase; letter-spacing: 3px; transition: 0.3s ease; }
+.back-link:hover { opacity: 1; color: #c5a059; }
+
+/* KÖZPONTI TARTALOM */
+.container { max-width: 1300px; width: 95%; margin: 20px auto 80px auto; padding: 0 20px; }
+
+/* SZŰRŐ GOMBOK (VÁLTOZATLANUL ELEGÁNS KEREKÍTETT DIZÁJN) */
+.filter-container { display: flex; justify-content: center; gap: 15px; margin-bottom: 60px; flex-wrap: wrap; }
+.filter-btn { background: transparent; color: rgba(255, 255, 255, 0.4); border: 1px solid rgba(255, 255, 255, 0.08); padding: 10px 26px; font-family: 'Montserrat', sans-serif; font-size: 0.75rem; font-weight: 400; text-transform: uppercase; letter-spacing: 2px; border-radius: 30px; cursor: pointer; transition: all 0.4s ease; }
+.filter-btn:hover, .filter-btn.active { color: #000000; background: #c5a059; border-color: #c5a059; box-shadow: 0 4px 20px rgba(197, 160, 89, 0.25); }
+
+/* FŐCÍM SZEKCIÓ */
+.page-header { text-align: center; margin-bottom: 60px; margin-top: 10px; }
+.page-title { font-family: 'Playfair Display', serif; color: #ffffff; font-size: 3rem; font-weight: 700; text-transform: uppercase; letter-spacing: 8px; line-height: 1.4; margin-bottom: 12px; }
+.page-title span { color: #c5a059; font-family: 'Playfair Display', serif; font-style: italic; font-weight: 400; letter-spacing: 6px; }
+.page-subtitle { font-family: 'Montserrat', sans-serif; color: rgba(255, 255, 255, 0.4); font-size: 0.75rem; font-weight: 300; text-transform: uppercase; letter-spacing: 5px; }
+
+/* DINAMIKUS SZOBA RÁCS */
+.room-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 45px; }
+
+/* LUXUS KÁRTYA DIZÁJN & HOVER EFFEKT */
+.room-card { background: rgba(255, 255, 255, 0.01); border: 1px solid rgba(197, 160, 89, 0.1); border-radius: 8px; overflow: hidden; transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1); display: flex; flex-direction: column; justify-content: space-between; position: relative; }
+.room-card:hover { transform: translateY(-8px); border-color: rgba(197, 160, 89, 0.35); background: rgba(255, 255, 255, 0.02); box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8); }
+
+/* KÉP ELRENDEZÉS ÉS ZOOM EFFEKT */
+.room-img-wrapper { width: 100%; height: 290px; position: relative; overflow: hidden; cursor: pointer; }
+.room-img { width: 100%; height: 100%; background-size: cover; background-position: center; transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1); }
+.room-card:hover .room-img { transform: scale(1.05); }
+
+/* Galéria megnyitása overlay hover effekt */
+.gallery-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); display: flex; justify-content: center; align-items: center; opacity: 0; transition: 0.4s ease; z-index: 2; }
+.room-img-wrapper:hover .gallery-overlay { opacity: 1; }
+.gallery-overlay span { border: 1px solid #c5a059; color: #c5a059; padding: 10px 20px; font-size: 0.8rem; font-weight: 500; text-transform: uppercase; letter-spacing: 2px; backdrop-filter: blur(5px); border-radius: 4px; }
+
+/* Lebegő Luxus Árcédula */
+.room-price-tag { font-family: 'Montserrat', sans-serif; position: absolute; top: 20px; right: 20px; background: rgba(9, 9, 11, 0.85); backdrop-filter: blur(10px); color: #c5a059; padding: 8px 16px; font-weight: 400; font-size: 0.8rem; border-radius: 3px; border: 1px solid rgba(197, 160, 89, 0.25); letter-spacing: 1px; z-index: 3; }
+
+/* Lebegő Infó Sáv a képek alján */
+.room-meta-bar { font-family: 'Montserrat', sans-serif; position: absolute; bottom: 0; left: 0; width: 100%; background: linear-gradient(transparent, rgba(0,0,0,0.9)); padding: 20px; display: flex; gap: 12px; font-size: 0.7rem; font-weight: 300; color: rgba(255,255,255,0.7); letter-spacing: 1px; z-index: 3; }
+.meta-item { display: flex; align-items: center; gap: 6px; background: rgba(255, 255, 255, 0.05); padding: 5px 12px; border-radius: 3px; backdrop-filter: blur(5px); border: 1px solid rgba(255,255,255,0.03); }
+
+/* KÁRTYA SZÖVEGES RÉSZEI */
+.room-details { padding: 35px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
+.room-name { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 600; text-transform: uppercase; letter-spacing: 3px; color: #ffffff; margin-bottom: 15px; }
+.room-desc { font-family: 'Montserrat', sans-serif; opacity: 0.55; font-size: 0.85rem; line-height: 1.7; margin-bottom: 25px; font-weight: 400; }
+
+/* INTERAKTÍV OKOSOTTHON FÜL */
+.iot-accordion { background: rgba(197, 160, 89, 0.02); border: 1px solid rgba(197, 160, 89, 0.08); border-radius: 4px; margin-bottom: 30px; overflow: hidden; }
+.accordion-header { font-family: 'Montserrat', sans-serif; padding: 14px 18px; font-size: 0.75rem; font-weight: 500; text-transform: uppercase; letter-spacing: 2px; color: #c5a059; cursor: pointer; display: flex; justify-content: space-between; align-items: center; user-select: none; transition: background 0.3s ease; }
+.accordion-header:hover { background: rgba(197, 160, 89, 0.05); }
+.accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); background: rgba(0,0,0,0.15); padding: 0 18px; }
+.accordion-content ul { list-style: none; padding: 15px 0; }
+.accordion-content li { font-family: 'Montserrat', sans-serif; font-size: 0.8rem; opacity: 0.7; margin-bottom: 10px; display: flex; align-items: center; gap: 12px; font-weight: 400; }
+
+/* FOGLALÁS GOMB (ÉRINTETLEN GYÁRI FUNKCIÓ ÉS KINÉZET) */
+.book-btn { display: block; width: 100%; text-align: center; background: transparent; color: #c5a059; border: 1px solid rgba(197, 160, 89, 0.4); padding: 15px; border-radius: 3px; font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; cursor: pointer; font-family: 'Montserrat', sans-serif; transition: all 0.3s ease-in-out; }
+.book-btn:hover { background: #c5a059; color: #000000; border-color: #c5a059; box-shadow: 0 8px 25px rgba(197, 160, 89, 0.2); transform: scale(1.01); }
+
+/* =======================================================
+   LUXUS ALAPSZOLGÁLTATÁSOK SZINKRONIZÁLT STÍLUSAI
+   ======================================================= */
+.luxury-services-section { margin-top: 100px; margin-bottom: 20px; border-top: 1px solid rgba(197, 160, 89, 0.15); padding-top: 60px; }
+.services-header { text-align: center; margin-bottom: 50px; }
+.services-title { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 700; text-transform: uppercase; letter-spacing: 6px; margin-bottom: 12px; }
+.services-title span { color: #c5a059; font-style: italic; font-weight: 400; }
+.services-subtitle { font-family: 'Montserrat', sans-serif; color: rgba(255, 255, 255, 0.4); font-size: 0.75rem; font-weight: 300; text-transform: uppercase; letter-spacing: 3px; }
+.gold-divider-line { width: 60px; height: 1px; background: #c5a059; margin: 20px auto 0 auto; opacity: 0.6; }
+
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+.service-card { background: rgba(255,255,255,0.01); border: 1px solid rgba(255,255,255,0.03); padding: 35px 30px; border-radius: 6px; text-align: center; transition: all 0.4s ease; }
+.service-card:hover { border-color: rgba(197, 160, 89, 0.35) !important; background: rgba(255, 255, 255, 0.02); transform: translateY(-4px); box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5); }
+.s-icon { font-size: 2.6rem; color: #c5a059; margin-bottom: 18px; }
+.s-title { font-family: 'Playfair Display', serif; font-size: 1.15rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; font-weight: 600; color: #ffffff; }
+.s-desc { font-family: 'Montserrat', sans-serif; font-size: 0.8rem; color: rgba(255,255,255,0.5); line-height: 1.6; font-weight: 400; }
+
+/* POP-UP GALÉRIA MODAL STÍLUSOK (VÁLTOZATLANUL SIKERES TARTÁSSAL) */
+.modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(10px); z-index: 1000; display: none; justify-content: center; align-items: center; opacity: 0; transition: opacity 0.3s ease; }
+.modal-overlay.active { display: flex; opacity: 1; }
+.modal-content { background: #121215; border: 1px solid rgba(197, 160, 89, 0.3); max-width: 900px; width: 95%; border-radius: 8px; position: relative; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.8); }
+
+.close-modal { position: absolute; top: 15px; right: 20px; color: #fff; font-size: 2rem; cursor: pointer; opacity: 0.5; transition: 0.3s; z-index: 10; font-weight: 200; }
+.close-modal:hover { opacity: 1; color: #c5a059; transform: scale(1.1); }
+
+.gallery-slider { position: relative; width: 100%; height: 500px; background: #000; display: flex; justify-content: center; align-items: center; }
+.gallery-slider img { width: 100%; height: 100%; object-fit: cover; transition: opacity 0.4s ease; }
+.slider-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: #fff; border: 1px solid rgba(255,255,255,0.2); width: 50px; height: 50px; cursor: pointer; font-size: 1.5rem; display: flex; justify-content: center; align-items: center; border-radius: 50%; backdrop-filter: blur(5px); transition: 0.3s; z-index: 5; }
+.slider-btn:hover { background: #c5a059; color: #000; border-color: #c5a059; }
+.prev-btn { left: 20px; }
+.next-btn { right: 20px; }
+
+.gallery-info { padding: 30px; text-align: center; border-top: 1px solid rgba(197, 160, 89, 0.2); }
+#gallery-title { font-family: 'Playfair Display', serif; color: #c5a059; font-size: 1.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 4px; margin-bottom: 10px; }
+#gallery-desc { font-family: 'Montserrat', sans-serif; font-size: 0.85rem; opacity: 0.6; line-height: 1.6; font-weight: 400; max-width: 700px; margin: 0 auto 15px auto; }
+.gallery-counter { font-size: 0.75rem; letter-spacing: 2px; opacity: 0.4; font-family: 'Montserrat', sans-serif; }
+
+/* LAZÍTOTT PRÉMIUM LÁBLÉC */
+.main-footer { background: #000000; padding: 50px 20px; border-top: 1px solid rgba(255,255,255,0.02); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+.footer-logo { font-family: 'Playfair Display', serif; color: #ffffff; font-size: 2.4rem; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 8px; font-style: normal; }
+.footer-logo span { color: #c5a059; }
+.footer-copy { font-family: 'Montserrat', sans-serif; color: rgba(255, 255, 255, 0.25); font-size: 0.65rem; font-weight: 400; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 20px; }
+.footer-line { width: 180px; height: 1px; background: #c5a059; opacity: 0.6; }

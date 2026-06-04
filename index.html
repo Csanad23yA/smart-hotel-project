@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartHotel | Designer FCS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=2.0">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">SMART<span>HOTEL</span></div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home" class="nav-item-link">Kezdőlap</a></li>
+                <li><a href="#rooms" class="nav-item-link">Szobák</a></li>
+                <li><a href="#smart-features" class="nav-item-link">Smart IoT</a></li>
+                <li><a href="#feedback" class="nav-item-link">Panaszkönyv</a></li>
+                <li><a href="#footer" class="nav-item-link">Kapcsolat</a></li>
+                <li><a href="vendegeknek.html" class="guest-nav-btn">🔑 VENDÉG BELÉPÉS</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <p class="hero-tagline">PREMIUM SYSTEM DESIGN</p>
+            <h1>Digitális Luxus <br><span>Felsőfokon</span></h1>
+            <div class="hero-divider"></div>
+            <p class="hero-desc">100 intelligens szoba • 300 fős kapacitás • 5 szint</p>
+        </div>
+    </section>
+
+    <section id="rooms" class="container">
+        <div class="header-group">
+            <h2 class="section-title">Szobakiosztás</h2>
+            <div class="header-line"></div>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <span class="card-num">01</span>
+                <h3>Kétágyas</h3>
+                <p>Emeletenként 8 egység. IPTV és klímavezérlés.</p>
+                <div class="card-deco"></div>
+            </div>
+            <div class="card">
+                <span class="card-num">02</span>
+                <h3>Háromágyas</h3>
+                <p>Emeletenként 8 egység. Dedikált AP és kávéfőző.</p>
+                <div class="card-deco"></div>
+            </div>
+            <div class="card">
+                <span class="card-num">03</span>
+                <h3>Családi</h3>
+                <p>Emeletenként 4 lakosztály. IoT biztonsági rendszer.</p>
+                <div class="card-deco"></div>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 60px; margin-bottom: 20px;">
+            <a href="szobak.html" class="felfedezes-btn">Felfedezés</a>
+        </div>
+    </section>
+
+    <section id="smart-features" class="container alt-bg">
+        <div class="header-group">
+            <h2 class="section-title">Szobaautomatizáció</h2>
+            <div class="header-line"></div>
+        </div>
+        <div class="feature-flex-container">
+            <div class="feature-item">
+                <div class="f-icon">❄️</div>
+                <span class="f-text">Légkondicionáló</span>
+                <p class="f-desc">Intelligens jelenlét-érzékelés alapú klímaszabályozás és energiaoptimalizálás.</p>
+                <span class="f-status">Online</span>
+            </div>
+            <div class="feature-item">
+                <div class="f-icon">☕</div>
+                <span class="f-text">Okos Kávéfőző</span>
+                <p class="f-desc">Személyre szabott ízprofilok és távoli indítás közvetlenül a vendégfiókból.</p>
+                <span class="f-status">Kész</span>
+            </div>
+            <div class="feature-item">
+                <div class="f-icon">🌡️</div>
+                <span class="f-text">Termosztát</span>
+                <p class="f-desc">Prediktív, automatizált hőmérséklet-beállítás a maximális kényelemért.</p>
+                <span class="f-status">22°C Aktív</span>
+            </div>
+            <div class="feature-item">
+                <div class="f-icon">💡</div>
+                <span class="f-text">Okos Világítás</span>
+                <p class="f-desc">Dinamikus napszak-követő hangulatfények és egyedi világítási sémák.</p>
+                <span class="f-status">Scene Aktív</span>
+            </div>
+            <div class="feature-item">
+                <div class="f-icon">⚠️</div>
+                <span class="f-text">CO2 Érzékelő</span>
+                <p class="f-desc">Folyamatos levegőminőség-felügyelet és automatikus frisslevegő-pótlás.</p>
+                <span class="f-status">Optimális</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="feedback" class="container">
+        <div class="form-container">
+            <h2 class="section-title">Panaszkönyv</h2>
+            <div class="header-line"></div>
+            <form id="feedbackForm" class="styled-form">
+                <div class="form-row">
+                    <input type="text" placeholder="Az Ön neve" required>
+                    <input type="email" placeholder="E-mail címe" required>
+                </div>
+                <textarea placeholder="Észrevétel, panasz vagy vélemény..." rows="6" required></textarea>
+                <button type="submit" class="btn-gold">BEKÜLDÉS</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="main-hotel-footer" id="footer">
+        <div class="footer-col footer-left">
+            <h4 class="footer-heading">Kapcsolat</h4>
+            <div class="footer-list">
+                <p class="footer-item" style="color: white !important">📍 SmartHotel Utca, Taktaharkány</p>
+                <div class="footer-item copy-wrapper">
+                    📞 <span class="footer-link copy-action" data-text="+36 1 234 5678">+36 1 234 5678</span>
+                    <span class="copy-tooltip">Másolva! 📋</span>
+                </div>
+                <div class="footer-item copy-wrapper">
+                    ✉️ <span class="footer-link copy-action" data-text="info@smarthotel.hu">info@smarthotel.hu</span>
+                    <span class="copy-tooltip">Másolva! 📋</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-col footer-center">
+            <h2 class="footer-brand">DESIGNER<span>FCS</span></h2>
+            <p class="footer-copy">© 2026 SmartHotel Projekt</p>
+            <div class="footer-divider"></div>
+        </div>
+
+        <div class="footer-col footer-right">
+            <h4 class="footer-heading">Közösségi Média</h4>
+            <div class="footer-list">
+                <p class="footer-item"><a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="footer-link">Instagram</a></p>
+                <p class="footer-item"><a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="footer-link">Facebook</a></p>
+                <p class="footer-item"><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" id="linkedin-staff-link" class="footer-link">LinkedIn</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

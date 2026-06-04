@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartHotel | Digitális Vendég Asszisztens</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="vendegeknek-style.css">
+</head>
+<body>
+
+    <div class="nav-bar">
+        <a href="index.html" class="logo">SMART<span>HOTEL</span></a>
+        <a href="index.html" class="back-link">← Vissza a főoldalra</a>
+    </div>
+
+    <div class="main-container">
+        <h2 style="font-family: 'Playfair Display', serif; text-align: center; color: #c5a059; font-size: 2.4rem; margin-bottom: 5px; letter-spacing: 1px;">Digitális Vendég Asszisztens</h2>
+        <p style="text-align: center; opacity: 0.5; margin-bottom: 35px; font-size: 0.9rem;">Biztonságos szobavezérlés és kényelmi szolgáltatások</p>
+
+        <div id="guest-login-section" style="max-width: 400px; margin: 40px auto; text-align: center; background: rgba(255,255,255,0.02); padding: 30px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05);">
+            <div style="font-size: 2.5rem; margin-bottom: 15px;">🔐</div>
+            <h3 style="color: #c5a059; margin-bottom: 10px; font-family: 'Playfair Display', serif;">Szobafiók Aktiválása</h3>
+            <p style="font-size: 0.8rem; opacity: 0.6; margin-bottom: 20px;">Adja meg a bejelentkezéskor kapott 4 jegyű vendégkódot.</p>
+            <input type="password" id="guest-pin-input" maxlength="4" placeholder="••••" style="width: 140px; text-align: center; font-size: 1.8rem; letter-spacing: 8px; padding: 10px; background: #121215; border: 1px solid rgba(197, 160, 89, 0.3); color: #c5a059; border-radius: 6px; outline: none; margin-bottom: 20px; display: block; margin-left: auto; margin-right: auto;">
+            <button id="submit-pin-btn" style="background: #c5a059; color: black; border: none; padding: 12px 30px; font-weight: 600; border-radius: 4px; cursor: pointer; letter-spacing: 1px; text-transform: uppercase; font-size: 0.8rem;">Belépés</button>
+            <p style="font-size: 0.7rem; opacity: 0.3; margin-top: 15px;">Kérjen egyedi PIN kódot az admin felületen egy szoba kiadásával!</p>
+        </div>
+
+        <div id="guest-control-section" style="display: none;">
+            <div class="profile-bar" style="background: rgba(197, 160, 89, 0.05); border: 1px solid rgba(197, 160, 89, 0.2); padding: 15px 25px; border-radius: 6px; margin-bottom: 35px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+                <span id="active-room-title" style="font-weight: 600; color: #c5a059; letter-spacing: 0.5px;">--- szoba</span>
+                <div class="status-group" style="display: flex; gap: 15px; align-items: center;">
+                    <span style="font-size: 0.8rem; background: #2ecc71; color: black; padding: 5px 10px; border-radius: 4px; font-weight: 600; white-space: nowrap;">KAPCSOLAT: ÉLŐ IoT</span>
+                    <button id="manual-logout-btn" style="background: rgba(231, 76, 60, 0.2); color: #e74c3c; border: 1px solid #e74c3c; padding: 5px 12px; border-radius: 4px; font-size: 0.75rem; cursor: pointer; font-weight: 600; white-space: nowrap;">🚪 BEZÁRÁS</button>
+                </div>
+            </div>
+
+            <div class="cards-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 25px;">
+                
+                <div style="background: rgba(255,255,255,0.01); border: 1px solid rgba(255,255,255,0.05); padding: 25px; border-radius: 6px; text-align: center; display: flex; flex-direction: column; justify-content: space-between; align-items: center;">
+                    <div style="width: 100%;">
+                        <h3 style="color: #c5a059; margin-bottom: 15px; font-size: 1.1rem; font-family: 'Playfair Display', serif;">🔑 Digitális Kulcs</h3>
+                        <div style="background: white; padding: 15px; display: inline-block; border-radius: 8px; margin-bottom: 20px;">
+                            <div style="width: 100px; height: 100px; background: repeating-linear-gradient(45deg, #000, #000 10px, #fff 10px, #fff 20px);"></div>
+                        </div>
+                    </div>
+                    <button id="unlock-door-btn" style="width: 100%; background:#2ecc71; color:white; border:none; padding:12px; font-weight: 600; border-radius: 4px; cursor:pointer; font-size: 0.85rem; text-transform: uppercase;">🔓 Ajtó Nyitása</button>
+                </div>
+
+                <div style="background: rgba(255,255,255,0.01); border: 1px solid rgba(255,255,255,0.05); padding: 25px; border-radius: 6px; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <h3 style="color: #c5a059; margin-bottom: 15px; font-size: 1.1rem; font-family: 'Playfair Display', serif;">💡 Szobavezérlés</h3>
+                        <div style="margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-size: 0.85rem;">Világítás:</span>
+                            <button id="demo-light-btn" style="background: #e74c3c; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-weight: 600; font-size: 0.75rem;">KIKAPCSOLVA</button>
+                        </div>
+                        <div style="margin-bottom: 20px;">
+                            <label style="display: block; margin-bottom: 8px; font-size: 0.85rem;">Hőmérséklet: <span id="demo-temp-display" style="color:#c5a059; font-weight:600;">22</span>°C</label>
+                            <input type="range" id="demo-temp-range" min="16" max="28" value="22">
+                        </div>
+                    </div>
+                    <div id="demo-room-preview" style="height: 45px; background: #121215; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; border: 1px solid rgba(255,255,255,0.03); color: rgba(255,255,255,0.4); text-align: center; padding: 5px;">
+                        ⚫ Sötét szoba állapota
+                    </div>
+                </div>
+
+                <div style="background: rgba(255,255,255,0.01); border: 1px solid rgba(255,255,255,0.05); padding: 25px; border-radius: 6px; display: flex; flex-direction: column; justify-content: space-between;">
+                    <h3 style="color: #c5a059; margin-bottom: 12px; font-size: 1.1rem; font-family: 'Playfair Display', serif;">🛎 Rendelések & Szerviz</h3>
+                    <form id="hotel-service-form" style="width: 100%;">
+                        <select id="srv-type" style="width:100%; padding: 10px; background:#121215; border:1px solid rgba(255,255,255,0.08); color:white; border-radius:4px; margin-bottom: 12px; font-size: 0.8rem; outline: none;">
+                            <option value="☕ Kávékapszula pótlás" data-price="1500">☕ Kávékapszula pótlás (1 500 Ft)</option>
+                            <option value="🧹 Tiszta törölközők" data-price="0">🧹 Tiszta törölközők (0 Ft)</option>
+                            <option value="⚠️ Hibabejelentés" data-price="0">⚠️ Műszaki hibabejelentés (0 Ft)</option>
+                            <option value="🥤 Minibár: Coca-Cola" data-price="1200">🥤 Minibár: Coca-Cola (1 200 Ft)</option>
+                            <option value="🍺 Minibár: Heineken sör" data-price="1800">🍺 Minibár: Heineken sör (1 800 Ft)</option>
+                            <option value="🍿 Minibár: Pringles chips" data-price="2200">🍿 Minibár: Pringles chips (2 200 Ft)</option>
+                            <option value="🚕 Fix áras Taxi rendelés" data-price="6500">🚕 Taxi rendelés a hotelhez (6 500 Ft)</option>
+                        </select>
+                        <textarea id="srv-msg" placeholder="Megjegyzés (pl. darabszám, taxi időpont...)" required style="width:100%; height: 70px; padding: 10px; background:#121215; border:1px solid rgba(255,255,255,0.08); color:white; border-radius:4px; margin-bottom: 12px; resize: none; font-size: 0.8rem; outline: none; line-height: 1.4;"></textarea>
+                        <button type="submit" style="width: 100%; background: #c5a059; color: black; border: none; padding: 10px; font-weight: 600; border-radius: 4px; cursor: pointer; font-size: 0.75rem; text-transform: uppercase;">Küldés</button>
+                    </form>
+                </div>
+
+                <div style="background: rgba(255,255,255,0.01); border: 1px solid rgba(255,255,255,0.05); padding: 25px; border-radius: 6px; display: flex; flex-direction: column; justify-content: space-between; text-align: center;">
+                    <div>
+                        <h3 style="color: #c5a059; margin-bottom: 12px; font-size: 1.1rem; font-family: 'Playfair Display', serif;">🛎️ Kijelentkezés</h3>
+                        <p style="color: rgba(255,255,255,0.6); font-size: 0.82rem; margin-bottom: 15px; line-height: 1.4; text-align: left;">Hagyja el a szállodát sorban állás nélkül. Az igénybe vett szolgáltatások összege itt adódik össze.</p>
+                        <div style="background: rgba(197, 160, 89, 0.05); border: 1px dashed rgba(197, 160, 89, 0.4); padding: 12px; border-radius: 4px; margin-bottom: 15px; font-size: 0.9rem; color: #c5a059; font-weight: 600;">
+                            💰 Számla egyenleg: <span id="checkout-balance-display">0</span> Ft
+                        </div>
+                    </div>
+                    <button id="express-checkout-btn" style="width: 100%; background: #e74c3c; color: white; border: none; padding: 12px; font-weight: 600; border-radius: 4px; cursor: pointer; font-size: 0.75rem; text-transform: uppercase;">Express Kijelentkezés</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="vendegeknek-script.js"></script>
+</body>
+</html>

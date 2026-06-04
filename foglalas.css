@@ -1,0 +1,160 @@
+/* ==========================================================================
+   SMARTHOTEL - FOGLALÁS OLDAL JAVÍTOTT PREMIUM STÍLUSOK
+   ========================================================================== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background: #09090b; 
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* KÖZPONTI KÁRTYA CONTAINER */
+.container {
+    background: #121215;
+    border: 1px solid rgba(197, 160, 89, 0.15);
+    max-width: 550px;
+    width: 100%;
+    padding: 45px 40px;
+    border-radius: 8px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+}
+
+/* CÍMEK STÍLUSAI */
+.form-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+.form-title span { color: #c5a059; }
+
+.gold-line {
+    width: 50px;
+    height: 1px;
+    background: #c5a059;
+    margin: 0 auto 35px auto;
+    opacity: 0.7;
+}
+
+/* FORMAI ELEMEK GROUPJA */
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 10px;
+}
+
+/* INPUTOK, SELECT MEZŐK FIXEI */
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group select {
+    width: 100%;
+    padding: 14px 16px;
+    background: #09090b;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #c5a059;
+    box-shadow: 0 0 10px rgba(197, 160, 89, 0.15);
+    background: #121215;
+}
+
+/* DÁTUMVÁLASZTÓ DESIGN */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1) sepia(100%) saturate(500%) hue-rotate(10deg);
+    cursor: pointer;
+}
+
+/* PRÉMIUM KALKULÁTOR BOX */
+.summary-box {
+    background: rgba(197, 160, 89, 0.02);
+    border: 1px solid rgba(197, 160, 89, 0.15);
+    border-radius: 4px;
+    padding: 22px;
+    margin: 30px 0;
+    display: none;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 12px;
+}
+
+.summary-total {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid rgba(197, 160, 89, 0.25);
+    padding-top: 14px;
+    margin-top: 5px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #c5a059;
+}
+
+/* FŐ GOMB - HOVERRE TELJES ARANY KITINGÍTÉSSEL */
+.btn-gold {
+    width: 100%;
+    background: transparent;
+    color: #c5a059;
+    border: 1px solid #c5a059;
+    padding: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.btn-gold:hover {
+    background: #c5a059;
+    color: #000000; /* Fekete szöveg, arany háttér mint a többi gombnál */
+    box-shadow: 0 8px 25px rgba(197, 160, 89, 0.3);
+}
+
+/* VISSZA LINK */
+.back-link {
+    display: block;
+    text-align: center;
+    margin-top: 25px;
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.4);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: #c5a059;
+}

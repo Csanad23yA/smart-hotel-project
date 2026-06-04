@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartHotel | Staff Dashboard - FCS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="admin-style.css">
+</head>
+<body>
+
+    <div id="login-overlay" class="login-page">
+        <div class="login-card">
+            <h2 class="fcs-logo">STAFF<span>LOGIN</span></h2>
+            <div class="header-line"></div>
+            <form id="login-form">
+                <input type="text" id="username" placeholder="Személyzeti azonosító" required>
+                <input type="password" id="password" placeholder="Jelszó" required>
+                <button type="submit" class="btn-gold">BELÉPÉS A RENDSZERBE</button>
+            </form>
+            <p id="login-error" class="error-msg">Érvénytelen azonosító vagy jelszó!</p>
+            <a href="index.html" style="display:block; margin-top:25px; color:#c5a059; font-size:0.8rem; text-decoration:none; text-transform:uppercase; letter-spacing:1px;">← Vissza a főoldalra</a>
+        </div>
+    </div>
+
+    <div id="admin-dashboard" class="dashboard-container" style="display: none;">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>SMART<span>HOTEL</span></h2>
+                <p id="staff-name">Személyzet neve</p>
+                <div class="header-line"></div>
+            </div>
+            <nav class="side-nav">
+                <a href="#" class="active" data-tab="overview">📊 Áttekintés</a>
+                <a href="#" data-tab="rooms">🔑 Szobakezelés</a>
+                <a href="#" data-tab="calendar">📅 Foglalási Naptár</a>
+                <a href="#" data-tab="feedback">📩 Panaszkönyv & Kérések</a>
+                <a href="#" id="logout-btn" class="logout-link">🚪 Kijelentkezés</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="main-header">
+                <h1 id="tab-title">📊 Áttekintés</h1>
+                <div class="date-display" id="live-date">2026.05.26</div>
+            </header>
+
+            <section id="tab-overview" class="tab-content">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Kiadott Szobák</h3>
+                        <div class="number" id="occupancy-rate">0%</div>
+                        <div class="progress-container">
+                            <div id="occupancy-bar" class="progress-bar" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="stats-mini-box">
+                        <div class="mini-card">
+                            <span class="label">Szabad szoba</span>
+                            <span class="val green-text" id="free-count">0</span>
+                        </div>
+                        <div class="mini-card">
+                            <span class="label">Foglalt szoba</span>
+                            <span class="val red-text" id="occupied-count">0</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Aktív panaszok</h3>
+                        <div class="number gold-text" id="complaint-count">0</div>
+                        <p class="sub">Azonnali intézkedést igényel</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Archivált levelek</h3>
+                        <div class="number" id="archive-count">0</div>
+                        <p class="sub">Megoldott és lezárt kérések</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="tab-rooms" class="tab-content" style="display: none;">
+                <div class="rooms-grid" id="rooms-display-container"></div>
+            </section>
+
+            <section id="tab-calendar" class="tab-content" style="display: none;">
+                <div class="data-table-container">
+                    <h3>Beérkezett Online Foglalások</h3>
+                    <div class="header-line" style="margin-bottom:20px;"></div>
+                    
+                    <div style="overflow-x:auto; width:100%;">
+                        <table style="width: 100%; border-collapse: collapse; background: #121215; border: 1px solid rgba(255,255,255,0.08); color: white; text-align: left;">
+                            <thead>
+                                <tr style="background: rgba(197, 160, 89, 0.2); color: #c5a059;">
+                                    <th style="padding: 12px; border-bottom: 1px solid rgba(255,255,255,0.08);">Vendég Neve</th>
+                                    <th style="padding: 12px; border-bottom: 1px solid rgba(255,255,255,0.08);">Szoba</th>
+                                    <th style="padding: 12px; border-bottom: 1px solid rgba(255,255,255,0.08);">Típus</th>
+                                    <th style="padding: 12px; border-bottom: 1px solid rgba(255,255,255,0.08);">Érkezés</th>
+                                    <th style="padding: 12px; border-bottom: 1px solid rgba(255,255,255,0.08);">Távozás</th>
+                                    <th style="padding: 12px; border-bottom: 1px solid rgba(255,255,255,0.08);">Éjszakák</th>
+                                    <th style="padding: 12px; border-bottom: 1px solid rgba(255,255,255,0.08);">Összeg</th>
+                                    <th style="padding: 12px; border-bottom: 1px solid rgba(255,255,255,0.08); text-align: center;">Művelet</th>
+                                </tr>
+                            </thead>
+                            <tbody id="calendar-table-body"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="calendar-section">
+                    <h3>Interaktív Foglalási Idővonal</h3>
+                    <div class="header-line" style="margin-bottom:20px;"></div>
+                    
+                    <div class="calendar-nav-bar">
+                        <button id="cal-prev-btn" class="btn-mini">◀ Előző Hét</button>
+                        <h4 id="cal-period-title">2026.05.25 - 2026.05.31</h4>
+                        <button id="cal-next-btn" class="btn-mini">Következő Hét ▶</button>
+                    </div>
+
+                    <div class="calendar-grid-container">
+                        <table class="calendar-table">
+                            <thead id="timeline-grid-head"></thead>
+                            <tbody id="timeline-grid-body"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <section id="tab-feedback" class="tab-content" style="display: none;">
+                <div class="data-table-container">
+                    <h3>Beérkező Kérések & Rendelések</h3>
+                    
+                    <div class="tabs-container">
+                        <button class="tab-btn active" id="tab-errors-btn">⚠️ Szobai Hibák & Panaszok</button>
+                        <button class="tab-btn" id="tab-orders-btn">🛒 Minibár & Taxi Rendelések</button>
+                    </div>
+
+                    <div id="panel-errors" class="feedback-panel">
+                        <div id="complaints-list-container"></div>
+                    </div>
+                    
+                    <div id="panel-orders" class="feedback-panel" style="display: none;">
+                        <div id="orders-list-container"></div>
+                    </div>
+                    
+                    <div class="archive-section">
+                        <button class="archive-toggle-btn" id="archiveToggleBtn">
+                            🗄️ Megoldott levelek megtekintése (0) ▾
+                        </button>
+                        <div id="archive-panel" class="archive-panel" style="display: none;">
+                            <div id="archive-list-container"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div id="roomModal" class="modal-overlay">
+        <div class="modal-content">
+            <span id="closeModal" class="close-modal-btn">&times;</span>
+            <h3 id="modal-room-title">101. Szoba teljes vezérlése</h3>
+            <div class="header-line" style="margin-bottom:25px;"></div>
+
+            <form id="room-edit-form">
+                <input type="hidden" id="edit-room-id">
+                
+                <div class="form-group">
+                    <label for="edit-room-status">Szoba Státusza:</label>
+                    <select id="edit-room-status">
+                        <option value="free">🟢 Szabad / LAKATLAN</option>
+                        <option value="occupied">🔴 Foglalt / Kiadott</option>
+                    </select>
+                </div>
+
+                <div class="form-group" id="guest-input-group">
+                    <label for="edit-room-guest">Vendég Neve:</label>
+                    <input type="text" id="edit-room-guest" placeholder="pl. Kovács János">
+                </div>
+
+                <div class="form-group" id="pin-input-group">
+                    <label for="edit-room-pin">Belépési PIN Kód (4 jegyű):</label>
+                    <input type="text" id="edit-room-pin" maxlength="4" placeholder="pl. 1234">
+                </div>
+
+                <div class="form-group" style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 15px;">
+                    <label for="edit-room-ac">Légkondicionáló állapota:</label>
+                    <select id="edit-room-ac">
+                        <option value="on">🟢 Bekapcsolva (ON)</option>
+                        <option value="off">⚫ Kikapcsolva (OFF)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="edit-room-temp">Célhőmérséklet: <span id="temp-val-display" style="color:#c5a059; font-weight:600;">22</span>°C</label>
+                    <input type="range" id="edit-room-temp" min="16" max="28" step="1" value="22" style="cursor:pointer; width:100%;">
+                </div>
+
+                <button type="submit" class="btn-gold" style="margin-top:20px; width:100%;">MÓDOSÍTÁSOK MENTÉSE</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="admin-script.js"></script>
+</body>
+</html>
